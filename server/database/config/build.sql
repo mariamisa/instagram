@@ -1,6 +1,5 @@
 BEGIN;
-DROP TABLE IF EXISTS users,
-notification CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     email VARCHAR(255) NOT NULL UNIQUE,
@@ -8,9 +7,11 @@ CREATE TABLE users (
     username VARCHAR(55) NOT NULL,
     mobile VARCHAR(255) NOT NULL,
     avatar TEXT,
-    location VARCHAR(255) NOT NULL,
-    role VARCHAR(55) DEFAULT 'user',
-    check(role in ('user','provider'))
+    location VARCHAR(255) NOT NULL
 );
+-- CREATE TABLE friendship (
+--     id SERIAL PRIMARY KEY,
+--     user_id INT REFERENCES users(id) ON DELETE CASCADE,
+-- );
 
 COMMIT;
