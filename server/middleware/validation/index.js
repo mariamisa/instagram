@@ -1,3 +1,7 @@
-const signupValidation = require("./signup");
+const signupValidation = require('./signup');
+const loginValidation = require('./login');
 
-module.exports = { signupValidation };
+module.exports = {
+  signupValidation,
+  loginValidation,
+};
