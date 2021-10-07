@@ -15,7 +15,6 @@ app.disable('x-powered-by');
 
 const middleware = [
   cookieParser(),
-  upload(),
   express.static(join(__dirname, '..', 'client', 'build')),
   logger('dev'),
 ];
