@@ -7,12 +7,10 @@ const createNewUser = ({
   mobile,
   location,
   avatar,
-  role,
 }) => {
   const sql = {
-    text:
-      'INSERT INTO users (username, email, password, mobile, location, avatar, role) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id, role;',
-    values: [username, email, password, mobile, location, avatar, role],
+    text: 'INSERT INTO users (email, password,username ,mobile,avatar, location) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id;',
+    values: [email, password, username, mobile, avatar, location],
   };
   return connection.query(sql);
 };
